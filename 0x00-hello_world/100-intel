@@ -1,0 +1,2 @@
+#!/bin/bash
+bcc -S -masm=intel $CFILE
