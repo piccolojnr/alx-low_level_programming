@@ -1,14 +1,17 @@
 #include <stdio.h>
 /**
- * main - Entry point of program
+ * _islower - Entry point of program
  *
- * Description: prints _putchar
+ * Description: checks for lowercase character
  *
- * Return: 0 (Success)
+ * @c: ascii decimal code for character
+ *
+ * Return: 1 if @c is lowercase, 0 otherwise
  */
-int main(void)
+int _islower(int c)
 {
-
-
-	return (0);
+	if (c >= 97 && c <= 122)
+		return (1);
+	else
+		return (0);
 }
