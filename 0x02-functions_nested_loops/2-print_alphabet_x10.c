@@ -1,14 +1,22 @@
-#include <stdio.h>
+#include "main.h"
 /**
- * main - Entry point of program
+ * print_alphabet_x10 - Entry point of program
  *
- * Description: prints _putchar
- *
- * Return: 0 (Success)
+ * Description: prints 10 times the alphabet, in lowercase
  */
-int main(void)
+void print_alphabet_x10(void)
 {
+	int i, j;
 
+	for (i = 0; i < 10; i++)
+	{
+		char letter = 'a';
 
-	return (0);
+		for (j = 0; j < 26; j++)
+		{
+			_putchar(letter);
+			letter++;
+		}
+		_putchar('\n');
+	}
 }
