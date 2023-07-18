@@ -1,14 +1,16 @@
-#include <stdio.h>
+#include "main.h"
 /**
- * main - Entry point of program
+ * _abs - Entry point of program
  *
- * Description: prints _putchar
+ * Description: computes absolute value of an integer
+ * @num:int value
  *
- * Return: 0 (Success)
+ * Return: int (Success)
  */
-int main(void)
+int _abs(int num)
 {
-
-
-	return (0);
+	if (num > 0)
+		return (num);
+	else
+		return (-num);
 }
