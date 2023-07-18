@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 /**
  * print_last_digit - Entry point of program
  *
@@ -10,6 +11,17 @@
 int print_last_digit(int num)
 {
 	int last_digit;
+
+
+	
+	if (num == INT_MIN)
+	{
+		last_digit = 8; /* Last digit of INT_MIN is 8 */
+		_putchar('0' + last_digit);
+		return last_digit;
+	}
+
+
 
 	if (num < 0)
 		num = -num;
