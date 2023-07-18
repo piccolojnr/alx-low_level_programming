@@ -1,14 +1,16 @@
-#include <stdio.h>
+#include "main.h"
 /**
- * main - Entry point of program
+ * add - Entry point of program
  *
- * Description: prints _putchar
+ * Description: adds two integers
+ * @num1: integer 1
+ * @num2: integer 2
  *
- * Return: 0 (Success)
+ * Return: int (Success)
  */
-int main(void)
+int add(int num1, int num2)
 {
+	int result = num1 + num2;
 
-
-	return (0);
+	return (result);
 }
