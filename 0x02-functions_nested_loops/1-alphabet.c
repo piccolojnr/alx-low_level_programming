@@ -1,14 +1,14 @@
-#include <stdio.h>
-/**
- * main - Entry point of program
- *
- * Description: prints _putchar
- *
- * Return: 0 (Success)
- */
-int main(void)
+#include "main.h"
+
+
+void print_alphabet(void)
 {
+	char letter = 'a';
 
-
-	return (0);
+	while (letter <= 'z')
+	{
+		_putchar(letter);
+		letter++;
+	}
+	_putchar('\n');
 }
