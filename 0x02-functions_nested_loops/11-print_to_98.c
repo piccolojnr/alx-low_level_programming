@@ -14,7 +14,7 @@ void print_to_98(int n)
 	{
 		int value = i;
 
-		if (i != n && i != 98)
+		if (i != n)
 			_putchar(' ');
 
 		if (i < 0)
