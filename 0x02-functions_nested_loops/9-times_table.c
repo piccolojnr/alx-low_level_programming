@@ -1,14 +1,32 @@
-#include <stdio.h>
+#include "main.h"
 /**
- * main - Entry point of program
+ * times_table - Entry point of program
  *
- * Description: prints _putchar
- *
- * Return: 0 (Success)
+ * Description: prints prints the 9 times table
  */
-int main(void)
+void times_table(void)
 {
+	int i, j;
 
+	for (i = 0; i < 10; i++)
+	{
+		for (j = 0; j < 10; j++)
+		{
+			int value = i * j;
 
-	return (0);
+			if (j != 0)
+				_putchar(' ');
+
+			if (value >= 10)
+				_putchar(value / 10 + '0');
+			else if (j != 0)
+				_putchar(' ');
+
+			_putchar(value % 10 + '0');
+
+			if (j != 9)
+				_putchar(',');
+		}
+		_putchar('\n');
+	}
 }
