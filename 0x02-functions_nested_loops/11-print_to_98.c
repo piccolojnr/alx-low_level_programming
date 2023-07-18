@@ -8,6 +8,7 @@
 void print_to_98(int n)
 {
 	int i;
+
 	i = n;
 
 	while (1)
@@ -25,7 +26,7 @@ void print_to_98(int n)
 
 		if (value >= 10 && value < 100)
 			_putchar(value / 10 + '0');
-		else if ( value >= 100 && value < 1000)
+		else if (value >= 100 && value < 1000)
 		{
 			_putchar(value / 100 + '0');
 			_putchar((value / 10) % 10 + '0');
