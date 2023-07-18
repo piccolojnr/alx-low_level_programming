@@ -1,14 +1,28 @@
-#include <stdio.h>
+#include "main.h"
 /**
- * main - Entry point of program
+ * print_sign - Entry point of program
  *
- * Description: prints _putchar
+ * Description: prints the sign of a number
  *
- * Return: 0 (Success)
+ * @n: number
+ *
+ * Return: 1 if @n is +ive, 0 if @n is zero, -1 if @n is -ive
  */
-int main(void)
+int print_sign(int n)
 {
-
-
-	return (0);
+	if (n > 0)
+	{
+		_putchar('+');
+		return (1);
+	}
+	else if (n == 0)
+	{
+		_putchar('0');
+		return (0);
+	}
+	else
+	{
+		_putchar('-');
+		return (-1);
+	}
 }
