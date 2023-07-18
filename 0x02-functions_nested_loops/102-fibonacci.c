@@ -7,7 +7,7 @@
 int main(void)
 {
 	int i;
-	
+
 	unsigned long fib[50];
 
 	fib[0] = 1;
