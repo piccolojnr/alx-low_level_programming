@@ -7,7 +7,7 @@
  */
 void print_times_table(int n)
 {
-	int i, j;
+	int i;
 
 	if (n < 0 || n > 15)
 		return;
@@ -25,9 +25,11 @@ void print_times_table(int n)
  */
 void print_times_row(int row_num, int max)
 {
+	int j;
+
 	for (j = 0; j <= max; j++)
 	{
-		int product = max * j;
+		int product = row_num * j;
 
 		if (j == 0)
 			_putchar('0');
