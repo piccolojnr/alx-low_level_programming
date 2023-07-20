@@ -2,7 +2,7 @@
 /**
  * main - Fizz-Buzz test
  *
- * Return: Always 1
+ * Return: Always 0
  */
 int main(void)
 {
@@ -24,5 +24,5 @@ int main(void)
 
 	printf("\n");
 
-	return (1);
+	return (0);
 }
