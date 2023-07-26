@@ -1,28 +1,12 @@
 #include "main.h"
 /**
- * print_digits - Prints the digits of a number.
- * @num: The number to be printed.
- *
- */
-void print_digits(int num)
-{
-	if (num == 0)
-		return;
-	print_digits(num / 10);
-	_putchar('0' + num % 10);
-}
-/**
  * print_number - Prints an integer.
  * @n: The integer to be printed.
  *
  */
 void print_number(int n)
 {
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
+	int divisor = 1;
 
 	if (n < 0)
 	{
@@ -30,5 +14,15 @@ void print_number(int n)
 		n = -n;
 	}
 
-	print_digits(n);
+	while (n / divisor >= 10)
+	{
+		divisor *= 10;
+	}
+
+	while (divisor > 0)
+	{
+		_putchar('0' + n / divisor);
+		n %= divisor;
+		divisor /= 10;
+	}
 }
