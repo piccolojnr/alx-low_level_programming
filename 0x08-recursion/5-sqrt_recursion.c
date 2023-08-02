@@ -8,35 +8,24 @@
 
 int _sqrt_recursion(int n)
 {
-	if (n < 0)
-		return (-1);
-
-	return (find_sqrt(n, 0, n));
+	return (_sqrt(n, 1));
 
 }
 /**
  * find_sqrt - finds the natural square root of a number
- * @num: number to be used
- * @start: the starting point
- * @end: the ending point
+ * @n: number to be used
+ * @i: the starting point
  *
  * Return: the square root of num
  */
-int find_sqrt(int num, int start, int end)
+int _sqrt(int num, int i)
 {
-	int middle;
+	int square = i * i;
 
-	if (start > end)
+	if (square > num)
 		return (-1);
+	else if (square == num)
+		return (i);
 
-	middle =  (start + end) / 2;
-
-	if (middle * middle == num)
-		return (middle);
-	else if (middle * middle > num)
-		return (find_sqrt(num, start, middle - 1));
-	else if (middle * middle < num)
-		return (find_sqrt(num, middle + 1, end));
-	else
-		return (-1);
+	return _sqrt(num, i + 1);
 }
