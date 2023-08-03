@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+int is_positive_number(char *s);
 /**
  * main - adds positive numbers
  * @argc: argument count
@@ -9,28 +10,53 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
+	int sum = 0, i, num;
 
-	if (argc <= 1)
+	if (argc == 1)
 	{
 		printf("0\n");
+		return (0);
 	}
-	else
+	for (i = 1; i < argc; i++)
 	{
-		for (i = 1; i < argc; i++)
+		num = atoi(argv[i]);
+
+		if (!num)
 		{
-			if (!atoi(argv[i]))
+			printf("Error\n");
+			return (1);
+		}
+		else
+		{
+			if (!is_positive_number(argv[i]))
 			{
 				printf("Error\n");
 				return (1);
 			}
 			else
-			{
-				sum += atoi(argv[i]);
-			}
+				sum += num;
 		}
-		printf("%d\n", sum);
 	}
-
+	printf("%d\n", sum);
 	return (0);
 }
+
+/**
+ * is_positive_number - checks if a number is positive
+ * @s: string
+ *
+ * Return: 1 if true, 0 if false
+ */
+int is_positive_number(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+	}
+	return (1);
+}
+
+
