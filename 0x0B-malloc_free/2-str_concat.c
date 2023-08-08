@@ -26,5 +26,9 @@ char *str_concat(char *s1, char *s2)
 
 	strout[k] = '\0';
 
-	return (strout);
+	if (strout)
+		return (strout);
+	else
+		return (NULL);
+
 }
