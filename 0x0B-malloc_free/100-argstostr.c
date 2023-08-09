@@ -9,7 +9,7 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int i, j, len;
+	int i, j, k = 0, len = 0;
 	char *tmp;
 	char *strout;
 
@@ -35,10 +35,12 @@ char *argstostr(int ac, char **av)
 		tmp = av[i];
 		while (*tmp != '\0')
 		{
-			strout[i] = *tmp;
+			strout[k] = *tmp;
 			tmp++;
+			k++;
 		}
-		strout[i] = '\n';
+		strout[k] = '\n';
+		k++;
 	}
 
 	strout[len] = '\0';
