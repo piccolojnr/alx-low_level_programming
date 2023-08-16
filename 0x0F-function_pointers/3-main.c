@@ -11,6 +11,7 @@
 int main(int argc, char *argv[])
 {
     int a, operator, b, (*operation)(int, int), result;
+
     if (argc < 4)
         return 0;
 

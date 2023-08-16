@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
     }
 
     numBytes = atoi(argv[1]);
+
     if (numBytes < 0)
     {
         printf("Error\n");
@@ -23,11 +24,12 @@ int main(int argc, char *argv[])
 
     for (i = 0; i < numBytes; i++)
     {
-        printf("%02x", ptr[i]);
-        if (i != numBytes - 1)
+        if (i == numBytes - 1)
         {
-            printf(" ");
+            printf("%02hhx\n", ptr[i]);
+            break;
         }
+        printf("%02hhx ", ptr[i]);
     }
 
     printf("\n");
