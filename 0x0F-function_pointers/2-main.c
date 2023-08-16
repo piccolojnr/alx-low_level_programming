@@ -23,7 +23,6 @@ int is_strictly_positive(int elem)
     return (elem > 0);
 }
 
-
 /**
  * abs_is_98 - check if the absolute value of a number is 98
  * @elem: the integer to check

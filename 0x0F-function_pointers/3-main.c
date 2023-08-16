@@ -3,7 +3,7 @@
  * main - checks code
  * @argc: number of arguments
  * @argv: arguments
- * 
+ *
  * Return: 0
  */
 
