@@ -10,22 +10,24 @@
 
 int main(int argc, char *argv[])
 {
-    int a, operator, b, (*operation)(int, int), result;
+	int a, operator, b, (*operation)(int, int), result;
 
-    if (argc < 4)
-        return 0;
+	if (argc < 4)
+		return (0);
 
-    a = atoi(argv[1]);
-    operator= atoi(argv[2]);
-    b = atoi(argv[3]);
+	a = atoi(argv[1]);
+	operator = atoi(argv[2]);
+	b = atoi(argv[3]);
 
-    operation = get_op_func(operator);
-    if (operation == NULL)
-        return 0;
+	operation = get_op_func(operator);
 
-    result = operation(a, b);
+	if (operation == NULL)
+		return (0);
 
-    printf("%d\n", result);
+	result = operation(a, b);
 
-    return 0;
+	printf("%d\n", result);
+
+	return (0);
 }
+
