@@ -1,39 +1,49 @@
 #include "3-calc.h"
+#include <stdlib.h>
+#include <stdio.h>
+
 /**
- * op_add - return the sum of a and b
- * @a: a
- * @b: b
- * Return: sum of a and b
+ * op_add - ...
+ * @a: ...
+ * @b: ...
+ *
+ * Return: ...
  */
 int op_add(int a, int b)
 {
 	return (a + b);
 }
+
 /**
- * op_sub - return the sum of a and b
- * @a: a
- * @b: b
- * Return: subtraction of a and b
+ * op_sub - ...
+ * @a: ...
+ * @b: ...
+ *
+ * Return: ...
  */
 int op_sub(int a, int b)
 {
 	return (a - b);
 }
+
 /**
- * op_mul - return the ultmiplicationm of a and b
- * @a: a
- * @b: b
- * Return: multiplication of a and b
+ * op_mul - ...
+ * @a: ...
+ * @b: ...
+ *
+ *  Return: ...
  */
 int op_mul(int a, int b)
 {
 	return (a * b);
 }
+
 /**
- * op_div - return the division of a and b
- * @a: a
- * @b: b
- * Return: division of a and b
+ * op_div - ...
+ * @a: ...
+ * @b: ...
+ *
+ *  Return: ...
  */
 int op_div(int a, int b)
 {
@@ -45,11 +55,13 @@ int op_div(int a, int b)
 
 	return (a / b);
 }
+
 /**
- * op_mod - return the modulo of a and b
- * @a: a
- * @b: b
- * Return: modulo of a and b
+ * op_mod - ...
+ * @a: ...
+ * @b: ...
+ *
+ * Return: ...
  */
 int op_mod(int a, int b)
 {

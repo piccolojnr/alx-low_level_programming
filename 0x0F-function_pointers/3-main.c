@@ -1,33 +1,33 @@
 #include "3-calc.h"
-#include <stddef.h>
-/**
- * main - checks code
- * @argc: number of arguments
- * @argv: arguments
- *
- * Return: 0
- */
+#include <stdlib.h>
+#include <stdio.h>
 
+/**
+ * main - ...
+ * @argc: ...
+ * @argv: ...
+ *
+ * Return: ...
+ */
 int main(int argc, char *argv[])
 {
-	int a, operator, b, (*operation)(int, int), result;
+	int (*oprt)(int, int);
 
-	if (argc < 4)
-		return (0);
+	if (argc != 4)
+	{
+		printf("Error\n");
+		exit(98);
+	}
 
-	a = atoi(argv[1]);
-	operator = atoi(argv[2]);
-	b = atoi(argv[3]);
+	oprt = get_op_func(argv[2]);
 
-	operation = get_op_func(operator);
+	if (!oprt)
+	{
+		printf("Error\n");
+		exit(99);
+	}
 
-	if (operation == NULL)
-		return (0);
-
-	result = operation(a, b);
-
-	printf("%d\n", result);
-
+	printf("%d\n", oprt(atoi(argv[1]), atoi(argv[3])));
 	return (0);
 }
 
