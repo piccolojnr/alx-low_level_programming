@@ -48,16 +48,11 @@ void print_str(va_list ap)
  */
 void print_all(const char * const format, ...)
 {
-	typedef struct {
-		char format;
-		void (*func)(va_list);
-	} format_map;
-
 	format_map fmts[] = {
-		{'c', print_char},
-		{'i', print_int},
-		{'f', print_float},
-		{'s', print_str},
+		{"c", print_char},
+		{"i", print_int},
+		{"f", print_float},
+		{"s", print_str},
 		{0, NULL}
 	};
 
@@ -67,12 +62,12 @@ void print_all(const char * const format, ...)
 
 	va_start(ap, format);
 
-	while (format[i])
+	while (format && format[i])
 	{
 		j = 0;
 		while (fmts[j].format)
 		{
-			if (format[i] == fmts[j].format)
+			if (format[i] == *fmts[j].format)
 			{
 				fmts[j].func(ap);
 				if (format[i + 1])
