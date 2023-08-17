@@ -1,17 +1,35 @@
 #include "variadic_functions.h"
 #include <stdio.h>
-
 /**
- * print_char - ...
- * @ap: ...
+ * print_char - Prints a character
+ * @ap: Argument list
  */
 void print_char(va_list ap)
 {
 	printf("%c", va_arg(ap, int));
 }
+
 /**
- * print_str - ...
- * @ap: ...
+ * print_int - Prints an integer
+ * @ap: Argument list
+ */
+void print_int(va_list ap)
+{
+	printf("%d", va_arg(ap, int));
+}
+
+/**
+ * print_float - Prints a float
+ * @ap: Argument list
+ */
+void print_float(va_list ap)
+{
+	printf("%f", va_arg(ap, double));
+}
+
+/**
+ * print_str - Prints a string
+ * @ap: Argument list
  */
 void print_str(va_list ap)
 {
@@ -22,35 +40,27 @@ void print_str(va_list ap)
 
 	printf("%s", s);
 }
+
 /**
- * print_int - ...
- * @ap: ...
- */
-void print_int(va_list ap)
-{
-	printf("%d", va_arg(ap, int));
-}
-/**
- * print_float - ...
- * @ap: ...
- */
-void print_float(va_list ap)
-{
-	printf("%f", va_arg(ap, double));
-}
-/**
- * print_all - prints anything
- * @format: format of the string
- * @...: variable number of arguments
+ * print_all - Prints anything based on the format
+ * @format: Format string
+ * @...: Variable number of arguments
  */
 void print_all(const char * const format, ...)
 {
-	op_t formats[] = {
-		{"c", print_char},
-		{"s", print_str},
-		{"i", print_int},
-		{"f", print_float},
+	typedef struct {
+		char format;
+		void (*func)(va_list);
+	} format_map;
+
+	format_map fmts[] = {
+		{'c', print_char},
+		{'i', print_int},
+		{'f', print_float},
+		{'s', print_str},
+		{0, NULL}
 	};
+
 	int i = 0;
 	int j;
 	va_list ap;
@@ -60,18 +70,20 @@ void print_all(const char * const format, ...)
 	while (format[i])
 	{
 		j = 0;
-		while (formats[j].op)
+		while (fmts[j].format)
 		{
-			if (format[i] == formats[j].op[0])
+			if (format[i] == fmts[j].format)
 			{
-				formats[j].f(ap);
+				fmts[j].func(ap);
 				if (format[i + 1])
 					printf(", ");
+				break;
 			}
 			j++;
 		}
 		i++;
 	}
 
+	va_end(ap);
 	printf("\n");
 }
