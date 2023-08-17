@@ -9,17 +9,18 @@ void print_all(const char * const format, ...);
 
 /**
  * struct format_types - Struct format_types
- * @format: the format
- * @func: The function pointer
+ * @identifier: The conversion specifier
+ * @f: The function pointer
  */
-typedef struct format_types {
-	char *format;
-	void (*func)(va_list);
-} format_map;
+typedef struct format_types
+{
+	char *identifier;
+	void (*f)(char *separator, va_list args);
+} f_dt;
 
-void print_char(va_list ap);
-void print_str(va_list ap);
-void print_int(va_list ap);
-void print_float(va_list ap);
+void print_char(char * separatpr, va_list args);
+void print_str(char * separatpr, va_list args);
+void print_int(char * separatpr, va_list args);
+void print_float(char * separatpr, va_list args);
 
 #endif /* VARIADIC_FUNCTIONS_H */
