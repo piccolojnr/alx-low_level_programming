@@ -9,19 +9,18 @@
  */
 size_t print_list(const list_t *h)
 {
-	size_t nelem;
-	list_t *list = (list_t *)h;
+	size_t node_count = 0;
 
-	nelem = 0;
-	while (list != NULL)
+	while (h != NULL)
 	{
-		if (list->str == NULL)
-			printf("[%d] %s\n", 0, "(nil)");
+		if (h->str != NULL)
+			printf("[%u] %s\n", h->len, h->str);
 		else
-			printf("[%d] %s\n", list->len, list->str);
-		list = list->next;
-		nelem++;
+			printf("[0] (nil)\n");
+
+		h = h->next;
+		node_count++;
 	}
 
-	return (nelem);
+	return (node_count);
 }
