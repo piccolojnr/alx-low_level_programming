@@ -3,9 +3,9 @@
  * flip_bits - returns the number of bits you would need to flip
  * @n: number one.
  * @m: number two.
- * 
+ *
  * Return: number of bits.
-*/
+ */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
     int num = 0;
