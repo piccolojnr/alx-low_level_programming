@@ -3,9 +3,9 @@
  * sets the value of a bit to 0 at a given index
  * @n: bit
  * @index: index
- * 
- * Return: 1 if it worked, or -1 if an error occurred 
-*/
+ *
+ * Return: 1 if it worked, or -1 if an error occurred
+ */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
     unsigned long int mask;
