@@ -10,14 +10,14 @@ unsigned int power(int base, int exp);
  */
 unsigned int power(int base, int exp)
 {
-       	int i;
+int i;
 
-	unsigned int res = 1;
+unsigned int res = 1;
 
-	for (i = 0; i < exp; i++)
-		res *= base;
+for (i = 0; i < exp; i++)
+res *= base;
 
-	return (res);
+return (res);
 }
 
 /**
