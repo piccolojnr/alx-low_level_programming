@@ -12,6 +12,6 @@ char *c = (char *)&n;
 
 if (*c)
 return (1);
-       
+
 return (0);
 }
