@@ -17,15 +17,15 @@ return (0);
 
 result = 0;
 
-for ( i = 0; b[i] != '\0'; i++)
+for (i = 0; b[i] != '\0'; i++)
 {
-if (b[i] == '0') 
+if (b[i] == '0')
 result = (result << 1) | 0;
-else if (b[i] == '1') 
+else if (b[i] == '1')
 result = (result << 1) | 1;
 else
-return (0); 
-        
+return (0);
+
 }
 
 return (result);
