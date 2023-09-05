@@ -1,6 +1,8 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
+#define BUFFER_SIZE 1024
+
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
