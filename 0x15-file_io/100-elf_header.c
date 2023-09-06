@@ -11,6 +11,7 @@
 void print_elf_header(const Elf64_Ehdr *header)
 {
 	int i;
+	const char *osabi;
 
 	printf("  Magic:   ");
 	for (i = 0; i < EI_NIDENT; i++)
@@ -25,8 +26,21 @@ void print_elf_header(const Elf64_Ehdr *header)
 	       "2's complement, little endian" : "2's complement, big endian");
 	printf("  Version:                           %d (current)\n",
 	       header->e_ident[EI_VERSION]);
-	printf("  OS/ABI:                            %d\n",
-	       header->e_ident[EI_OSABI]);
+
+	switch (header->e_ident[EI_OSABI])
+	{
+		case ELFOSABI_SYSV:
+			osabi = "UNIX - System V";
+			break;
+		case ELFOSABI_NETBSD:
+			osabi = "UNIX - NetBSD";
+			break;
+		default:
+			osabi = "UNKNOWN";
+			break;
+	}
+	printf("  OS/ABI:                            %s\n", osabi);
+
 	printf("  ABI Version:                       %d\n",
 	       header->e_ident[EI_ABIVERSION]);
 	printf("  Type:                              %s\n",
