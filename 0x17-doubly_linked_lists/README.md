@@ -1,4 +1,4 @@
-# More Linked Lists
+# C - Doubly Linked Lists
 
 ## General
 - What is a doubly linked list
@@ -27,19 +27,5 @@
 - Don’t forget to push your header file
 - All your header files should be include guarded
 
+
 ## Files
-- [print_listint](./0-print_listint.c)
-- [listint_len](./1-listint_len.c)
-- [add_nodeint](./2-add_nodeint.c)
-- [add_nodeint_end](./3-add_nodeint_end.c)
-- [free_listint](./4-free_listint.c)
-- [free_listint2](./5-free_listint2.c)
-- [pop_listint](./6-pop_listint.c)
-- [get_nodeint](./7-get_nodeint.c)
-- [sum_listint](./8-sum_listint.c)
-- [insert_nodeint](./9-insert_nodeint.c)
-- [delete_nodeint](./10-delete_nodeint.c)
-- [reverse_listint](./100-reverse_listint.c)
-- [print_listint_safe](./101-print_listint_safe.c)
-- [free_listint_safe](./102-free_listint_safe.c)
-- [find_loop](./103-find_loop.c)
