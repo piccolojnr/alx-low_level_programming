@@ -9,15 +9,11 @@ all: $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) $(wildcard *~)
+	$(RM) *~ $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
 
-fclean:
-	$(RM) $(NAME)
+fclean: clean oclean
 
 re: fclean all
-
-.PHONY: all clean oclean fclean re
-
