@@ -13,7 +13,7 @@ def island_perimeter(grid):
     for i in range(height):
         for j in range(width):
             if grid[i][j] == 1:
-                perimeter += 4  # Each cell contributes 4 sides to the perimeter
+                perimeter += 4
 
                 # Check left neighbor
                 if j > 0 and grid[i][j - 1] == 1:
