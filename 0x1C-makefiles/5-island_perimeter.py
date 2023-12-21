@@ -9,20 +9,18 @@ def island_perimeter(grid):
     perimeter = 0
     height = len(grid)
     width = len(grid[0])
-    is_in = False
+
     for i in range(height):
         for j in range(width):
             if grid[i][j] == 1:
-                if i == 0 or grid[i - 1][j] == 0:
-                    perimeter += 1
+                perimeter += 4  # Each cell contributes 4 sides to the perimeter
 
-                if i == height - 1 or grid[i + 1][j] == 0:
-                    perimeter += 1
+                # Check left neighbor
+                if j > 0 and grid[i][j - 1] == 1:
+                    perimeter -= 2  # Subtract 2 for shared side
 
-                if not is_in:
-                    is_in = True
-                    perimeter += 1
-            elif is_in and grid[i][j] == 0:
-                is_in = False
-                perimeter += 1
+                # Check top neighbor
+                if i > 0 and grid[i - 1][j] == 1:
+                    perimeter -= 2  # Subtract 2 for shared side
+
     return perimeter
