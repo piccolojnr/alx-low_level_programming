@@ -12,30 +12,30 @@
  */
 int _helper(int *array, int value, size_t low, size_t high)
 {
-    size_t i;
-    size_t mid;
+	size_t i;
+	size_t mid;
 
-    if (low >= high && array[low] == value)
-        return (low);
+	if (low >= high && array[low] == value)
+		return (low);
 
-    printf("Searching in array: ");
-    for (i = low; i < high; i++)
-        printf("%d, ", array[i]);
-    printf("%d\n", array[i]);
+	printf("Searching in array: ");
+	for (i = low; i < high; i++)
+		printf("%d, ", array[i]);
+	printf("%d\n", array[i]);
 
-    if (low >= high)
-        return (-1);
+	if (low >= high)
+		return (-1);
 
-    mid = low + (high - low) / 2;
+	mid = low + (high - low) / 2;
 
-    if (array[mid] == value)
-        high = mid;
-    else if (array[mid] < value)
-        low = mid + 1;
-    else
-        high = mid - 1;
+	if (array[mid] == value)
+		high = mid;
+	else if (array[mid] < value)
+		low = mid + 1;
+	else
+		high = mid - 1;
 
-    return (_helper(array, value, low, high));
+	return (_helper(array, value, low, high));
 }
 
 /**
@@ -49,11 +49,11 @@ int _helper(int *array, int value, size_t low, size_t high)
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-    size_t low = 0;
-    size_t high = size - 1;
+	size_t low = 0;
+	size_t high = size - 1;
 
-    if (array == NULL)
-        return (-1);
+	if (array == NULL)
+		return (-1);
 
-    return (_helper(array, value, low, high));
+	return (_helper(array, value, low, high));
 }
